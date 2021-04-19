@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .hero,
+  .profiles {
+    @apply w-full;
+    min-height: 90vh;
+  }
+
+  .thumbnails {
+    @apply text-6xl font-semibold py-4;
+    font-family: 'Bad Script', cursive;
+    text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .thumbnails-wedding,
+  .thumbnails-date {
+    @apply text-2xl opacity-80 tracking-widest font-normal leading-5;
+    font-family: 'Italianno', cursive;
+  }
+
+  .layer {
+    @apply absolute inset-0 bg-black opacity-60 z-20;
+  }
+}
