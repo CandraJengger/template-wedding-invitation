@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .hero,
   .profiles {
     @apply w-full;
     min-height: 90vh;
