@@ -8,6 +8,26 @@
     min-height: 90vh;
   }
 
+  #surat {
+    @apply w-full;
+    min-height: 80vh;
+  }
+
+  #surat .surat-img-wrapper {
+    max-width: 340px;
+    min-height: 514px;
+  }
+
+  #surat .surat-text {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  #surat .surat-title {
+    @apply text-4xl font-bold;
+    font-family: 'Bad Script', cursive;
+    color: #596257;
+  }
+
   .thumbnails {
     @apply text-6xl font-semibold py-4;
     font-family: 'Bad Script', cursive;
