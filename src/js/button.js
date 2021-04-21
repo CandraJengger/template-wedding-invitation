@@ -51,7 +51,10 @@ if (window !== undefined) {
     addClass(btnMusic, 'bg-white');
     addClass(btnMusic, 'text-green-dark');
   });
+
+  window.addEventListener('load', () => {
+    playAudio();
+  });
 }
 
-playAudio();
 btnMusic.addEventListener('click', toggleIcon);
