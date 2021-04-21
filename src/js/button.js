@@ -1,3 +1,4 @@
+const audioBacksound = document.getElementById('backsound');
 const btnMusic = document.getElementById('button-music');
 const icoPlay = '<i class="fas fa-play"></i>';
 const icoPause = '<i class="fas fa-pause"></i>';
@@ -11,14 +12,24 @@ const removeClass = (el, className) => {
   el.classList.remove(className);
 };
 
+const pauseAudio = () => {
+  audioBacksound.pause();
+};
+
+const playAudio = () => {
+  audioBacksound.play();
+};
+
 const toggleIcon = () => {
   if (btnMusic.classList.contains('play')) {
     btnMusic.innerHTML = icoPlay;
     removeClass(btnMusic, 'play');
+    pauseAudio();
     return;
   }
 
   btnMusic.innerHTML = icoPause;
+  playAudio();
   addClass(btnMusic, 'play');
   return;
 };

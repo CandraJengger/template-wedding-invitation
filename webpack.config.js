@@ -107,6 +107,14 @@ module.exports = {
             ignore: ['*.DS_Store', 'Thumbs.db'],
           },
         },
+        {
+          from: path.resolve(env.paths.source, 'audio'),
+          to: path.resolve(env.paths.output, 'audio'),
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
+        },
       ],
     }),
   ].concat(htmlPluginEntries),
