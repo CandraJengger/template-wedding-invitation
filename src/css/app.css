@@ -10,7 +10,7 @@
 
   #surat {
     @apply w-full;
-    min-height: 80vh;
+    min-height: 70vh;
   }
 
   #surat .surat-img-wrapper {
