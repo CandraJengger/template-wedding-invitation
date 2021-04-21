@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer components {
-  .profiles {
+  #profiles {
     @apply w-full;
     min-height: 90vh;
   }
@@ -42,5 +42,17 @@
 
   .layer {
     @apply absolute inset-0 bg-black opacity-60 z-20;
+  }
+
+  .quicksand {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  .bad-script {
+    font-family: 'Bad Script', cursive;
+  }
+
+  .italianno {
+    font-family: 'Italianno', cursive;
   }
 }
