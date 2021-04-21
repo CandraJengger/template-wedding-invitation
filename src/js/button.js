@@ -25,16 +25,20 @@ const toggleIcon = () => {
 
 if (window !== undefined) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 80) {
+    if (window.scrollY > 70) {
       if (btnMusic.classList.contains('bg-white')) {
         removeClass(btnMusic, 'bg-white');
-        addClass(btnMusic, 'bg-green-400');
+        removeClass(btnMusic, 'text-green-dark');
+        addClass(btnMusic, 'bg-green-dark');
+        addClass(btnMusic, 'text-white');
       }
       return;
     }
 
-    removeClass(btnMusic, 'bg-green-400');
+    removeClass(btnMusic, 'bg-green-dark');
+    removeClass(btnMusic, 'text-white');
     addClass(btnMusic, 'bg-white');
+    addClass(btnMusic, 'text-green-dark');
   });
 }
 
