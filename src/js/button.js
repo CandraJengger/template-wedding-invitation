@@ -1,6 +1,5 @@
 const audioBacksound = document.getElementById('backsound');
 const btnMusic = document.getElementById('button-music');
-const cbIsPlay = document.querySelector('.isPlay');
 
 const icoPlay = '<i class="fas fa-play"></i>';
 const icoPause = '<i class="fas fa-pause"></i>';
@@ -52,14 +51,6 @@ if (window !== undefined) {
     removeClass(btnMusic, 'text-white');
     addClass(btnMusic, 'bg-white');
     addClass(btnMusic, 'text-green-dark');
-  });
-
-  window.addEventListener('mouseover', () => {
-    if (cbIsPlay.checked === false) {
-      cbIsPlay.checked = true;
-      console.log('check');
-      playAudio();
-    }
   });
 }
 
