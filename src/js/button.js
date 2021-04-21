@@ -53,4 +53,5 @@ if (window !== undefined) {
   });
 }
 
+playAudio();
 btnMusic.addEventListener('click', toggleIcon);
