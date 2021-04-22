@@ -23,7 +23,7 @@ module.exports = {
       white: colors.white,
       gray: colors.coolGray,
       red: colors.red,
-      yellow: colors.amber,
+      yellow: { ...colors.amber, 200: '#E1BC75' },
       green: { ...colors.emerald, dark: '#596257', 'full-dark': '#3A3A3A' },
       blue: colors.blue,
       indigo: colors.indigo,
@@ -121,6 +121,7 @@ module.exports = {
       xl: '0.75rem',
       '2xl': '1rem',
       '3xl': '1.5rem',
+      '4xl': '2.5rem',
       full: '9999px',
     },
     borderWidth: {

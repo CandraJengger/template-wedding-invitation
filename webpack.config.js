@@ -58,6 +58,14 @@ module.exports = {
         ],
       },
       {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
+      {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         use: [
           {
