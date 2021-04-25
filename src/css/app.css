@@ -2,15 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Quicksand', sans-serif;
+}
+
 @layer components {
   #profiles {
     @apply w-full;
-    min-height: 90vh;
   }
 
   #surat {
     @apply w-full;
-    min-height: 70vh;
   }
 
   #surat .surat-img-wrapper {
@@ -54,5 +56,15 @@
 
   .italianno {
     font-family: 'Italianno', cursive;
+  }
+
+  #date {
+    height: max-content;
+  }
+
+  .date-wrapper {
+    max-width: 1080px;
+    min-height: 650px;
+    max-height: 804px;
   }
 }
