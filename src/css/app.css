@@ -62,9 +62,14 @@
     height: max-content;
   }
 
-  .date-wrapper {
-    max-width: 1080px;
-    min-height: 650px;
-    max-height: 804px;
+  @media screen and (min-width: 1200px) and (min-height: 1000px) {
+    .date-wrapper {
+      max-width: 1080px;
+      min-height: 804px;
+    }
+
+    .max-w {
+      max-width: 1080px;
+    }
   }
 }

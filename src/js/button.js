@@ -41,13 +41,13 @@ if (window !== undefined) {
       if (btnMusic.classList.contains('bg-white')) {
         removeClass(btnMusic, 'bg-white');
         removeClass(btnMusic, 'text-green-dark');
-        addClass(btnMusic, 'bg-green-dark');
+        addClass(btnMusic, 'bg-yellow-200');
         addClass(btnMusic, 'text-white');
       }
       return;
     }
 
-    removeClass(btnMusic, 'bg-green-dark');
+    removeClass(btnMusic, 'bg-yellow-200');
     removeClass(btnMusic, 'text-white');
     addClass(btnMusic, 'bg-white');
     addClass(btnMusic, 'text-green-dark');

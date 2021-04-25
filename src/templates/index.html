@@ -24,7 +24,7 @@
         <source src="../audio/backsound.mp3" type="audio/mp3" />
       </audio>
       <button
-        class="fixed right-5 bottom-5 w-12 h-12 shadow-xl text-xl rounded-full bg-white text-green-dark z-50 transition-all duration-150"
+        class="fixed right-5 bottom-5 w-16 h-16 shadow-xl text-xl rounded-full bg-white text-green-dark z-50 transition-all duration-150"
         id="button-music"
       >
         <i class="fas fa-play"></i>
@@ -53,7 +53,7 @@
       <!-- Start: Surat -->
       <section
         id="surat"
-        class="flex flex-col lg:flex-row justify-center py-32"
+        class="flex flex-col lg:flex-row justify-center py-24"
       >
         <div
           class="surat-text-base w-full lg:w-2/4 flex flex-col justify-center items-center"
@@ -200,7 +200,7 @@
         />
         <div class="absolute w-full h-full inset-0 bg-white opacity-60"></div>
         <div
-          class="container relative flex flex-col items-center justify-center w-full md:w-8/12 h-full rounded-none md:rounded-4xl mx-auto overflow-hidden py-7"
+          class="date-wrapper container relative flex flex-col items-center justify-center w-full md:w-8/12 h-full rounded-none md:rounded-4xl mx-auto overflow-hidden py-7"
         >
           <!-- background -->
           <img
@@ -257,102 +257,113 @@
       </section>
       <!-- End: Date -->
 
-      <!-- Start: Process -->
-      <section
-        id="process"
-        class="flex flex-col items-center justify-center px-5 sm:px-10 lg:px-32"
-      >
-        <!-- Start: article 1 -->
-        <article class="story my-8 container flex flex-col-reverse md:flex-row">
-          <div
-            class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
-          >
-            <h2 class="text-2xl font-semibold">How We Meet</h2>
-            <span
-              class="inline-block text-xl text-gray-600 italic tracking-tighter mb-5"
-              >2021</span
-            >
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              accusantium saepe? Minima id labore numquam corrupti, eos nemo
-              repellendus a?
-            </p>
-          </div>
-          <div
-            class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 mb-5 bg-pink-200"
-          ></div>
-        </article>
-        <!-- End: Article 1 -->
-
-        <!-- Start: Article 2 -->
-        <article class="story my-8 container flex flex-col md:flex-row">
-          <div
-            class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 bg-pink-200 mb-5"
-          ></div>
-          <div
-            class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
-          >
-            <h2 class="text-2xl font-semibold">How We Meet</h2>
-            <span
-              class="inline-block text-xl text-gray-600 italic tracking-tighter mb-5"
-              >2021</span
-            >
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              accusantium saepe? Minima id labore numquam corrupti, eos nemo
-              repellendus a?
-            </p>
-          </div>
-        </article>
-        <!-- End: Article 2 -->
-
-        <!-- Start: Article 3 -->
-        <article class="story my-8 container flex flex-col-reverse md:flex-row">
-          <div
-            class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
-          >
-            <h2 class="text-2xl font-semibold">How We Meet</h2>
-            <span
-              class="inline-block text-xl text-gray-600 italic tracking-tighter mb-5"
-              >2021</span
-            >
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              accusantium saepe? Minima id labore numquam corrupti, eos nemo
-              repellendus a?
-            </p>
-          </div>
-          <div
-            class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 bg-pink-200 mb-5"
-          ></div>
-        </article>
-        <!-- End: Article 4 -->
-      </section>
-      <!-- End: Process -->
-
       <!-- Start: Live Streaming -->
-      <section id="live" class="flex justify-center bg-green-dark">
-        <div class="container flex flex-col items-center px-8 py-7">
-          <img src="" alt="" />
-          <div class="text-center text-white">
+      <section id="live" class="flex justify-center px-5 sm:px-10 lg:px-32">
+        <div class="container max-w flex flex-col items-center px-8 py-7 mt-4">
+          <img
+            src="../images/design/youtube.svg"
+            alt="Youtube"
+            class="w-16 mb-6"
+          />
+
+          <div class="text-center">
             <h2 class="text-2xl font-semibold mb-4">Virtual Wedding</h2>
             <p>
               We regret to inform you that considering the Covid-19 pandemic,
               not all friends are allowed to attend our wedding. We’re still
               utterly in love, but it’s important to us that everyone stays
-              safe, so we plan to publish our wedding virtually via Live
-              Instagram that you can join through the following link:
+              safe, so we plan to publish our wedding virtually via Live Youtube
+              that you can join through the following link:
             </p>
           </div>
           <a
             href="#"
-            class="btn py-2 px-8 border-2 border-white text-center bg-white hover:bg-transparent text-green-full-dark hover:text-white transition-all duration-200 my-7 font-semibold"
+            class="btn py-3 px-8 text-center bg-green-700 hover:bg-green-dark text-white 700 transition-all duration-200 my-7 font-semibold rounded-md"
           >
             Live Streaming
           </a>
         </div>
       </section>
       <!-- End: Live Streaming -->
+
+      <!-- Start: Process -->
+      <section
+        id="process"
+        class="flex flex-col items-center justify-center px-5 sm:px-10 lg:px-32"
+      >
+        <div class="container max-w">
+          <!-- Start: article 1 -->
+          <article
+            class="story my-8 container flex flex-col-reverse md:flex-row"
+          >
+            <div
+              class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
+            >
+              <h2 class="text-2xl font-semibold">How We Meet</h2>
+              <span
+                class="inline-block text-xl text-gray-600 italic tracking-tighter mb-5"
+                >2021</span
+              >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam, accusantium saepe? Minima id labore numquam corrupti,
+                eos nemo repellendus a?
+              </p>
+            </div>
+            <div
+              class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 mb-5 bg-pink-200"
+            ></div>
+          </article>
+          <!-- End: Article 1 -->
+
+          <!-- Start: Article 2 -->
+          <article class="story my-8 container flex flex-col md:flex-row">
+            <div
+              class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 bg-pink-200 mb-5"
+            ></div>
+            <div
+              class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
+            >
+              <h2 class="text-2xl font-semibold">How We Meet</h2>
+              <span
+                class="inline-block text-xl text-gray-600 italic tracking-tighter mb-5"
+                >2021</span
+              >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam, accusantium saepe? Minima id labore numquam corrupti,
+                eos nemo repellendus a?
+              </p>
+            </div>
+          </article>
+          <!-- End: Article 2 -->
+
+          <!-- Start: Article 3 -->
+          <article
+            class="story my-8 container flex flex-col-reverse md:flex-row"
+          >
+            <div
+              class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
+            >
+              <h2 class="text-2xl font-semibold">How We Meet</h2>
+              <span
+                class="inline-block text-xl text-gray-600 italic tracking-tighter mb-5"
+                >2021</span
+              >
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aliquam, accusantium saepe? Minima id labore numquam corrupti,
+                eos nemo repellendus a?
+              </p>
+            </div>
+            <div
+              class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 bg-pink-200 mb-5"
+            ></div>
+          </article>
+          <!-- End: Article 4 -->
+        </div>
+      </section>
+      <!-- End: Process -->
     </main>
   </body>
 </html>

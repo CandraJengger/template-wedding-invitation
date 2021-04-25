@@ -24,7 +24,12 @@ module.exports = {
       gray: colors.coolGray,
       red: colors.red,
       yellow: { ...colors.amber, 200: '#E1BC75' },
-      green: { ...colors.emerald, dark: '#596257', 'full-dark': '#3A3A3A' },
+      green: {
+        ...colors.emerald,
+        dark: '#596257',
+        'full-dark': '#3A3A3A',
+        700: '#647F4E',
+      },
       blue: colors.blue,
       indigo: colors.indigo,
       purple: colors.violet,
