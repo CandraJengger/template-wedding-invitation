@@ -1,4 +1,20 @@
 import '../css/app.css';
+// import Swiper JS
+import Swiper from 'swiper/bundle';
+// import Swiper styles
+import 'swiper/swiper-bundle.css';
 
 import './button';
-console.log('kenek');
+
+var swiper = new Swiper('.swiper-container', {
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
