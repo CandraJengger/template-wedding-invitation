@@ -67,6 +67,10 @@
     height: 100%;
   }
 
+  .img-gallery-big {
+    max-width: 917px;
+  }
+
   @media screen and (min-width: 1200px) and (min-height: 1000px) {
     .date-wrapper {
       max-width: 1080px;
