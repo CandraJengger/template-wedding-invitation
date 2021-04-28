@@ -6,15 +6,29 @@ import 'swiper/swiper-bundle.css';
 
 import './button';
 
-var swiper = new Swiper('.swiper-container', {
+const wishes = new Swiper('.swiper-container', {
+  slidesPerView: 1,
   spaceBetween: 30,
   centeredSlides: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+  breakpoints: {
+    // when window width is >= 499px
+    473: {
+      slidesPerView: 2,
+      spaceBetweenSlides: 50,
+    },
+    // when window width is >= 999px
+    999: {
+      slidesPerView: 3,
+      spaceBetweenSlides: 50,
+    },
   },
+  // autoplay: {
+  //   delay: 2500,
+  //   disableOnInteraction: false,
+  // },
 });

@@ -62,13 +62,20 @@
     height: max-content;
   }
 
-  .swiper-container {
+  .swiper-container,
+  .swiper-container-2 {
     width: 100%;
     height: 100%;
   }
 
   .img-gallery-big {
     max-width: 917px;
+  }
+
+  #wish .title {
+    @apply text-4xl font-bold;
+    font-family: 'Bad Script', cursive;
+    color: #596257;
   }
 
   @media screen and (min-width: 1200px) and (min-height: 1000px) {

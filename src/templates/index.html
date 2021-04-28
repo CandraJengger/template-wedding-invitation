@@ -214,18 +214,7 @@
             </div>
             <div
               class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 mb-5"
-            >
-              <!-- Swiper -->
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide bg-black">Slide 1</div>
-                  <div class="swiper-slide bg-gray-800">Slide 2</div>
-                  <div class="swiper-slide bg-red-400">Slide 3</div>
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-              </div>
-            </div>
+            ></div>
           </article>
           <!-- End: Article 1 -->
 
@@ -478,7 +467,103 @@
       <!-- End: proker -->
 
       <!-- Start: wish -->
-      <section id="wish" class="w-full h-screen"></section>
+      <section
+        id="wish"
+        class="w-full flex flex-col items-center justify-center pt-14 pb-9"
+      >
+        <h2 class="title">Doa & Harapan</h2>
+        <div class="container flex flex-col items-center relative">
+          <div class="w-full md:w-3/4 mb-5 px-4 sm:px-0">
+            <!-- Swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide flex items-center">
+                  <div
+                    class="w-full p-5 rounded-md shadow-lg bg-white mx-auto my-6"
+                  >
+                    <h4 class="font-semibold text-green-full-dark">Candra</h4>
+                    <p class="text-sm text-gray-600">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolorem porro nostrum tempora maxime doloremque illo
+                      tenetur labore dicta numquam molestias?
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide flex items-center">
+                  <div
+                    class="w-full p-5 rounded-md shadow-lg bg-white mx-auto my-6"
+                  >
+                    <h4 class="font-semibold text-green-full-dark">Tsubasa</h4>
+                    <p class="text-sm text-gray-600">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolorem porro nostrum tempora maxime doloremque illo
+                      tenetur labore dicta numquam molestias?
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide flex items-center">
+                  <div
+                    class="w-full p-5 rounded-md shadow-lg bg-white mx-auto my-6"
+                  >
+                    <h4 class="font-semibold text-green-full-dark">Roberto</h4>
+                    <p class="text-sm text-gray-600">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Dolorem porro nostrum tempora maxime doloremque illo
+                      tenetur labore dicta numquam molestias?
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Add Arrows -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+
+          <div class="w-full flex justify-center">
+            <form action="#" class="w-full md:w-2/4 my-5 px-4">
+              <label class="block mb-4">
+                <span class="text-gray-700 font-medium">Nama</span>
+                <input
+                  type="text"
+                  class="mt-2 block w-full py-2 px-5 bg-gray-100 rounded-md border border-transparent shadow-sm focus:border-gray-500 focus:bg-white"
+                  placeholder=""
+                />
+              </label>
+              <label class="block mb-4">
+                <span class="text-gray-700 font-medium">Doa & Harapan</span>
+                <textarea
+                  class="mt-2 block w-full py-2 px-5 bg-gray-100 rounded-md border border-transparent shadow-sm focus:border-gray-500 focus:bg-white"
+                  rows="8"
+                ></textarea>
+              </label>
+              <label class="block mb-4">
+                <span class="text-gray-700 font-medium block mb-2"
+                  >Maukah kamu hadir ?</span
+                >
+                <input type="radio" name="kehadiran" id="hadir" value="hadir" />
+                <label for="hadir" class="mr-4">Ya, saya akan hadir</label>
+                <input
+                  type="radio"
+                  name="kehadiran"
+                  id="tidakHadir"
+                  value="tidak hadir"
+                />
+                <label for="tidakHadir" class="mr-4"
+                  >Maaf, belum bisa hadir</label
+                >
+              </label>
+              <button
+                type="submit"
+                href="#"
+                class="btn w-full py-3 px-8 text-center bg-green-700 hover:bg-green-dark text-white 700 transition-all duration-200 my-7 font-semibold rounded-md"
+              >
+                Kirim
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
       <!-- End: wish -->
     </main>
   </body>
