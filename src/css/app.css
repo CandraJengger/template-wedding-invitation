@@ -78,6 +78,11 @@
     color: #596257;
   }
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 90% !important;
+  }
+
   @media screen and (min-width: 1200px) and (min-height: 1000px) {
     .date-wrapper {
       max-width: 1080px;
