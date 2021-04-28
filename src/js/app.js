@@ -27,8 +27,8 @@ const wishes = new Swiper('.swiper-container', {
       spaceBetweenSlides: 50,
     },
   },
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
 });
