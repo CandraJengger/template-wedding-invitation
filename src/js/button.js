@@ -37,7 +37,7 @@ const toggleIcon = () => {
 
 if (window !== undefined) {
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
       if (btnMusic.classList.contains('bg-white')) {
         removeClass(btnMusic, 'bg-white');
         removeClass(btnMusic, 'text-green-dark');
