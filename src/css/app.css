@@ -81,6 +81,7 @@
   .swiper-button-prev,
   .swiper-button-next {
     top: 90% !important;
+    color: #3a3a3a !important;
   }
 
   @media screen and (min-width: 1200px) and (min-height: 1000px) {
