@@ -3,6 +3,7 @@ import '../css/app.css';
 import Swiper from 'swiper/bundle';
 // import Swiper styles
 import 'swiper/swiper-bundle.css';
+import 'lightgallery.js/dist/css/lightgallery.css';
 
 import './button';
 
@@ -32,3 +33,25 @@ const wishes = new Swiper('.swiper-container', {
     disableOnInteraction: false,
   },
 });
+
+Promise.all([
+  import(
+    /* webpackChunkName: "lightgallery" */
+    'lightgallery.js'
+  ), // lightgallery.js must be first
+  import('lg-fullscreen.js'),
+  import('lg-zoom.js'),
+  import('lg-pager.js'),
+  // import('lg-hash.js')
+])
+  .then(([]) => {
+    console.log('kenek');
+    lightGallery(document.getElementById('lightgallery'));
+  })
+  .catch((error) => {
+    console.log(error);
+    toastr.error(
+      'An error occurred while loading the lightgallery module',
+      'Module Load Failed'
+    );
+  });
