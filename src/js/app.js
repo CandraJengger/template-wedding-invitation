@@ -5,7 +5,15 @@ import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 import 'lightgallery.js/dist/css/lightgallery.css';
 
-import './button';
+import './components';
+
+import Main from './main';
+
+const main = new Main({
+  mainContent: document.querySelector('main'),
+  fab: document.getElementById('button-music'),
+  audio: document.querySelector('#backsound'),
+});
 
 const wishes = new Swiper('.swiper-container', {
   slidesPerView: 1,
