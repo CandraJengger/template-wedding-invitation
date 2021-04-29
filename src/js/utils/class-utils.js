@@ -9,3 +9,7 @@ export const removeClass = (element, className) => {
 export const isContains = (element, className) => {
   return element.classList.contains(className);
 };
+
+export const replaceClass = ({ element, oldClass, newClass }) => {
+  element.classList.replace(oldClass, newClass);
+};
