@@ -7,9 +7,9 @@ import 'lightgallery.js/dist/css/lightgallery.css';
 
 import './components';
 
-import Main from './main';
+import LayoutInitiator from './utils/layout-initiator';
 
-const main = new Main({
+LayoutInitiator.init({
   mainContent: document.querySelector('main'),
   fab: document.getElementById('button-music'),
   audio: document.querySelector('#backsound'),
