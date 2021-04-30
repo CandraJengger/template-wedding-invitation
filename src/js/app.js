@@ -8,11 +8,17 @@ import 'lightgallery.js/dist/css/lightgallery.css';
 import './components';
 
 import LayoutInitiator from './utils/layout-initiator';
+import ButtonsInitiator from './utils/buttons-link-initiator';
 
 LayoutInitiator.init({
   mainContent: document.querySelector('main'),
   fab: document.getElementById('button-music'),
   audio: document.querySelector('#backsound'),
+});
+
+ButtonsInitiator.init({
+  btnLiveStream: document.getElementById('btn-live-stream'),
+  btnViewMap: document.getElementById('btn-view-map'),
 });
 
 const wishes = new Swiper('.swiper-container', {
