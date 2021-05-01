@@ -3,3 +3,4 @@ import './ButtomComp';
 import './CardProfileComp';
 import './CardComp';
 import './TextComp';
+import './ImageCaptionComp';
