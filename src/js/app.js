@@ -24,7 +24,7 @@ ButtonsInitiator.init({
 
 CountdownInitiator.init({
   countdownContainer: document.getElementById('countdown'),
-  date: new Date('May 2, 2021 08:30:00').getTime(),
+  date: new Date('May 22, 2021 08:00:00').getTime(),
 });
 
 const wishes = new Swiper('.swiper-container', {
