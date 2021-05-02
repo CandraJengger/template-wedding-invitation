@@ -11,7 +11,7 @@ class ButtomComp extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <buttton
+      <button
         id=${this.idComp}
         class="${
           this.variant === 'primary'
@@ -21,7 +21,7 @@ class ButtomComp extends HTMLElement {
         type="${this.type === 'submit' ? 'submit' : ''}"
       >
         ${this.text}
-      </buttton>
+      </button>
     `;
   }
 }

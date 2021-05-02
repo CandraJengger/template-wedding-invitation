@@ -1,5 +1,5 @@
 import './FloatingActionButton';
-import './ButtomComp';
+import './ButtonComp';
 import './CardProfileComp';
 import './CardComp';
 import './TextComp';

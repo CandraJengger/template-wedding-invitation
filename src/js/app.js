@@ -13,6 +13,7 @@ import './components';
 import LayoutInitiator from './utils/layout-initiator';
 import ButtonsInitiator from './utils/buttons-link-initiator';
 import CountdownInitiator from './utils/countdown-initiator';
+import FormInitiator from './utils/form-initiator';
 import { getNameFromURL } from './routes/url-parser';
 
 LayoutInitiator.init({
@@ -41,7 +42,15 @@ const nameFromURL = getNameFromURL();
 if (nameFromURL.length > 0) {
   document.getElementById(
     'formContainer'
-  ).innerHTML = `<form-comp nameValue="${nameFromURL}" class="w-full md:w-2/4 my-5 px-4"></form-comp>`;
+  ).innerHTML = `<form-comp idComp="form" nameValue="${nameFromURL}" class="w-full md:w-2/4 my-5 px-4"></form-comp>`;
+
+  FormInitiator.init({
+    form: document.getElementById('form'),
+    nameInput: document.getElementById('nameInput'),
+    wishInput: document.getElementById('wishInput'),
+    button: document.getElementById('btn-kehadiran'),
+    radios: document.getElementsByName('kehadiran'),
+  });
 }
 
 const wishes = new Swiper('.swiper-container', {
