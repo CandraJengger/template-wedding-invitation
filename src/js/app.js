@@ -7,6 +7,7 @@ import 'lightgallery.js/dist/css/lightgallery.css';
 import 'aos/dist/aos.css';
 
 import AOS from 'aos';
+import LazyLoad from 'vanilla-lazyload';
 
 import './components';
 
@@ -79,6 +80,8 @@ const wishes = new Swiper('.swiper-container', {
     disableOnInteraction: false,
   },
 });
+
+const pageLazyLoad = new LazyLoad();
 
 Promise.all([
   import(

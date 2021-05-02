@@ -20,9 +20,11 @@ class CardProfileComp extends HTMLElement {
         class="relative card-img w-60 h-60 rounded-full overflow-hidden"
       >
         <img
-          src="${this.imgSrc}"
+          data-src="${this.imgSrc}"
           alt="${this.altImg}"
-          class="absolute w-full h-full inset-0 object-cover object-center"
+          class="lazy absolute w-full h-full inset-0 object-cover object-center"
+          width="240"
+          height="240"
         />
       </div>
       <div class="card-body py-6 text-center">
