@@ -9,6 +9,7 @@ import './components';
 
 import LayoutInitiator from './utils/layout-initiator';
 import ButtonsInitiator from './utils/buttons-link-initiator';
+import CountdownInitiator from './utils/countdown-initiator';
 
 LayoutInitiator.init({
   mainContent: document.querySelector('main'),
@@ -19,6 +20,11 @@ LayoutInitiator.init({
 ButtonsInitiator.init({
   btnLiveStream: document.getElementById('btn-live-stream'),
   btnViewMap: document.getElementById('btn-view-map'),
+});
+
+CountdownInitiator.init({
+  countdownContainer: document.getElementById('countdown'),
+  date: new Date('May 2, 2021 08:30:00').getTime(),
 });
 
 const wishes = new Swiper('.swiper-container', {
@@ -64,7 +70,7 @@ Promise.all([
   })
   .catch((error) => {
     console.log(error);
-    toastr.error(
+    console.error(
       'An error occurred while loading the lightgallery module',
       'Module Load Failed'
     );
