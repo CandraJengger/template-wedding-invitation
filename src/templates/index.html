@@ -38,7 +38,7 @@
           <h2 class="thumbnails-wedding">The Wedding of</h2>
           <h1 class="thumbnails w-full mx-auto my-3">Dimas & Kiki</h1>
           <h2 class="thumbnails-date">22 . 05 . 2021</h2>
-          <div id="countdown"></div>
+          <div id="countdown" data-aos="zoom-in-up"></div>
         </div>
       </section>
       <!-- End: Hero -->
@@ -51,9 +51,19 @@
         <div
           class="surat-text-base w-full lg:w-2/4 flex flex-col justify-center items-center"
         >
-          <h2 class="surat-title">We Are Together</h2>
-          <span class="inline-block w-14 border-t-2 border-black my-8"></span>
-          <div class="surat-text w-full text-center">
+          <h2 class="surat-title" data-aos="fade-right" data-aos-duration="500">
+            We Are Together
+          </h2>
+          <span
+            class="inline-block w-14 border-t-2 border-black my-8"
+            data-aos="fade-right"
+            data-aos-duration="500"
+          ></span>
+          <div
+            class="surat-text w-full text-center"
+            data-aos="fade-left"
+            data-aos-duration="500"
+          >
             <text-comp
               content="And of His signs is that He created for you from yourselves mates
             that you may find tranquility in them; and He placed between you
@@ -80,17 +90,23 @@
           class="cards container w-full flex flex-col md:flex-row justify-center"
         >
           <!-- Start: Card 1 -->
-          <card-profile
-            idComp="male"
-            imgSrc="https://picsum.photos/200"
-            altImg="Foto dari si Lorem"
-            nameProfile="Lorem"
-            fullName="Lorem, ipsum dolor sit amet"
-            fatherName="Pak Ipsum"
-            motherName="Bu Amet"
-            linkIG="#"
-            usernameIG="@inak"
-          ></card-profile>
+          <div
+            data-aos="flip-right"
+            data-aos-delay="200"
+            data-aos-duration="600"
+          >
+            <card-profile
+              idComp="male"
+              imgSrc="https://picsum.photos/200"
+              altImg="Foto dari si Lorem"
+              nameProfile="Lorem"
+              fullName="Lorem, ipsum dolor sit amet"
+              fatherName="Pak Ipsum"
+              motherName="Bu Amet"
+              linkIG="#"
+              usernameIG="@inak"
+            ></card-profile>
+          </div>
           <!-- End: Card 1 -->
 
           <p
@@ -100,17 +116,23 @@
           </p>
 
           <!-- Start: Card 2 -->
-          <card-profile
-            idComp="male"
-            imgSrc="https://picsum.photos/200"
-            altImg="Foto dari si Lorem"
-            nameProfile="Lorem"
-            fullName="Lorem, ipsum dolor sit amet"
-            fatherName="Pak Ipsum"
-            motherName="Bu Amet"
-            linkIG="#"
-            usernameIG="@inak"
-          ></card-profile>
+          <div
+            data-aos="flip-right"
+            data-aos-delay="350"
+            data-aos-duration="600"
+          >
+            <card-profile
+              idComp="male"
+              imgSrc="https://picsum.photos/200"
+              altImg="Foto dari si Lorem"
+              nameProfile="Lorem"
+              fullName="Lorem, ipsum dolor sit amet"
+              fatherName="Pak Ipsum"
+              motherName="Bu Amet"
+              linkIG="#"
+              usernameIG="@inak"
+            ></card-profile>
+          </div>
           <!-- End: Card 2 -->
         </div>
       </section>
@@ -125,6 +147,7 @@
           <!-- Start: article 1 -->
           <article
             class="story my-8 container flex flex-col-reverse md:flex-row"
+            data-aos="zoom-in"
           >
             <div
               class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
@@ -148,7 +171,10 @@
           <!-- End: Article 1 -->
 
           <!-- Start: Article 2 -->
-          <article class="story my-8 container flex flex-col md:flex-row">
+          <article
+            class="story my-8 container flex flex-col md:flex-row"
+            data-aos="zoom-in"
+          >
             <div
               class="process-img-wrapper w-full md:w-2/4 h-64 sm:h-72 lg:h-96 bg-pink-200 mb-5"
             ></div>
@@ -173,6 +199,7 @@
           <!-- Start: Article 3 -->
           <article
             class="story my-8 container flex flex-col-reverse md:flex-row"
+            data-aos="zoom-in"
           >
             <div
               class="process-text w-full md:w-2/4 px-8 flex flex-col justify-center"
@@ -221,13 +248,16 @@
           />
           <div class="layer"></div>
           <!-- background -->
-          <div class="date-icon-header w-24 mb-9 sm:mb-16 z-50">
+          <div
+            class="date-icon-header w-24 mb-9 sm:mb-16 z-50"
+            data-aos="zoom-in-up"
+          >
             <img src="../images/design/wedding-ring.svg" alt="icon" />
           </div>
           <div class="w-full z-40">
             <div class="date-wedding">
               <text-comp content="Sunday"></text-comp>
-              <div class="flex justify-center">
+              <div class="flex justify-center" data-aos="fade-down">
                 <p class="text-right text-6xl font-extrabold mr-3">28</p>
                 <p class="text-left text-lg">February <br />2021</p>
               </div>
@@ -235,14 +265,14 @@
             <div
               class="date-akad-reception-wrapper flex flex-col sm:flex-row justify-around my-8"
             >
-              <div class="date-akad my-2">
+              <div class="date-akad my-2" data-aos="fade-right">
                 <text-comp
                   content="Akad Nikah"
                   className="text-3xl font-bold mb-2"
                 ></text-comp>
                 <text-comp content="08:00 - 10:00"></text-comp>
               </div>
-              <div class="date-reception my-2">
+              <div class="date-reception my-2" data-aos="fade-left">
                 <text-comp
                   content="Resepsi"
                   className="text-3xl font-bold mb-2"
@@ -250,7 +280,7 @@
                 <text-comp content="11:00 - 12:00"></text-comp>
               </div>
             </div>
-            <div class="date-location">
+            <div class="date-location" data-aos="fade-up">
               <p class="font-bold text-lg">Aula Caraka Yudha</p>
               <p>
                 Jalan Perumahan Jatijajar , Jatijajar, Kecamatan Tapos
@@ -260,6 +290,9 @@
                 idComp="btn-view-map"
                 variant="secondary"
                 text="View Map"
+                data-aos="zoom-out"
+                data-aos-delay="150"
+                data-aos-duration="550"
               ></button-comp>
             </div>
           </div>
@@ -291,6 +324,9 @@
           <button-comp
             idComp="btn-live-stream"
             text="Live Steaming"
+            data-aos="zoom-out"
+            data-aos-delay="150"
+            data-aos-duration="550"
           ></button-comp>
         </div>
       </section>
@@ -375,16 +411,25 @@
           <image-caption
             imgSrc="../images/design/distance.svg"
             caption="Memakai Masker"
+            data-aos="flip-down"
+            data-aos-duration="500"
+            data-aos-delay="150"
           ></image-caption>
 
           <image-caption
             imgSrc="../images/design/mask.svg"
             caption="Menjaga jarak"
+            data-aos="flip-down"
+            data-aos-duration="500"
+            data-aos-delay="300"
           ></image-caption>
 
           <image-caption
             imgSrc="../images/design/liquid-soap.svg"
             caption="Cuci Tangan"
+            data-aos="flip-down"
+            data-aos-duration="500"
+            data-aos-delay="450"
           ></image-caption>
         </div>
       </section>

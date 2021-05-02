@@ -4,6 +4,9 @@ import Swiper from 'swiper/bundle';
 // import Swiper styles
 import 'swiper/swiper-bundle.css';
 import 'lightgallery.js/dist/css/lightgallery.css';
+import 'aos/dist/aos.css';
+
+import AOS from 'aos';
 
 import './components';
 
@@ -26,6 +29,10 @@ CountdownInitiator.init({
   countdownContainer: document.getElementById('countdown'),
   date: new Date('May 22, 2021 08:00:00').getTime(),
 });
+
+AOS.init();
+
+window.addEventListener('load', AOS.refresh);
 
 const wishes = new Swiper('.swiper-container', {
   slidesPerView: 1,
