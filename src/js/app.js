@@ -13,6 +13,7 @@ import './components';
 import LayoutInitiator from './utils/layout-initiator';
 import ButtonsInitiator from './utils/buttons-link-initiator';
 import CountdownInitiator from './utils/countdown-initiator';
+import { getNameFromURL } from './routes/url-parser';
 
 LayoutInitiator.init({
   mainContent: document.querySelector('main'),
@@ -30,9 +31,18 @@ CountdownInitiator.init({
   date: new Date('May 22, 2021 08:00:00').getTime(),
 });
 
+// AOS
 AOS.init();
 
 window.addEventListener('load', AOS.refresh);
+
+// Get Name From URL
+const nameFromURL = getNameFromURL();
+if (nameFromURL.length > 0) {
+  document.getElementById(
+    'formContainer'
+  ).innerHTML = `<form-comp nameValue="${nameFromURL}" class="w-full md:w-2/4 my-5 px-4"></form-comp>`;
+}
 
 const wishes = new Swiper('.swiper-container', {
   slidesPerView: 1,
@@ -72,7 +82,6 @@ Promise.all([
   // import('lg-hash.js')
 ])
   .then(([]) => {
-    console.log('kenek');
     lightGallery(document.getElementById('lightgallery'));
   })
   .catch((error) => {
