@@ -28,13 +28,14 @@ const App = async () => {
   if (nameFromURL.length > 0) {
     const result = await ActionSource.checkInvitation(nameSlugFromURL);
     const invContainer = document.querySelector('invite-comp');
-    invContainer.namePerson = result.data.name;
 
-    if (!result) {
+    if (result === undefined) {
       document.getElementById('body').innerHTML =
         '<no-invite-comp></no-invite-comp>';
       return;
     }
+
+    invContainer.namePerson = result.data.name;
 
     InviteInitiator.init({
       invContainer: invContainer,
