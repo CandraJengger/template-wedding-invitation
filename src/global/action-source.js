@@ -12,17 +12,18 @@ const ActionSource = {
     return result.data;
   },
 
-  async updatePresence(name, data) {
+  async updatePresence(data) {
     const options = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      query: {
-        name,
-      },
       body: JSON.stringify(data),
     };
 
-    const result = await fetch(API_ENDPOINT.PERSON_PRESENCE, options);
+    const result = await fetch(
+      () => API_ENDPOINT.PERSON_PRESENCE(data.id),
+      options
+    );
+
     return result;
   },
 };
