@@ -54,6 +54,10 @@ const App = async () => {
       button: document.getElementById('btn-kehadiran'),
       radios: document.getElementsByName('kehadiran'),
     });
+  } else {
+    document.getElementById('body').innerHTML =
+      '<no-invite-comp></no-invite-comp>';
+    return;
   }
 
   LayoutInitiator.init({
