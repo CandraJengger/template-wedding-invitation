@@ -1,20 +1,24 @@
+import ActionSource from '../../global/action-source';
+
 const FormInitiator = {
-  init({ form, nameInput, wishInput, button, radios }) {
+  init({ form, nameInput, wishInput, idInput, button, radios }) {
     this._form = form;
     this._nameInput = nameInput;
     this._wishInput = wishInput;
+    this._idValue = idInput;
     this._button = button;
 
-    this._form.addEventListener('submit', (event) => {
+    this._form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       const data = {
+        id: this._idValue.value,
         name: this._nameInput.value,
         wish: this._wishInput.value,
-        attend: this._getValueFromRadio(radios),
+        attending: this._getValueFromRadio(radios),
       };
 
-      console.log(data);
+      const result = await ActionSource.updatePresence(data);
     });
   },
 
@@ -23,7 +27,7 @@ const FormInitiator = {
 
     for (let i = 0; i < radios.length; i++) {
       if (radios[i].checked) {
-        value = radios[i].value;
+        value = radios[i].value === 'hadir' ? true : false;
         break;
       }
     }

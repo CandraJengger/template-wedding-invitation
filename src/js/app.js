@@ -46,12 +46,13 @@ const App = async () => {
 
     document.getElementById(
       'formContainer'
-    ).innerHTML = `<form-comp idComp="form" nameValue="${nameFromURL}" class="w-full md:w-2/4 my-5 px-4"></form-comp>`;
+    ).innerHTML = `<form-comp idComp="form" nameValue="${result.data.name}" idValue="${result.data.id_invitation}" wishValue="${result.data.wish}" class="w-full md:w-2/4 my-5 px-4"></form-comp>`;
 
     FormInitiator.init({
       form: document.getElementById('form'),
       nameInput: document.getElementById('nameInput'),
       wishInput: document.getElementById('wishInput'),
+      idInput: document.getElementById('idInput'),
       button: document.getElementById('btn-kehadiran'),
       radios: document.getElementsByName('kehadiran'),
     });

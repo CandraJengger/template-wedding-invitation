@@ -19,12 +19,12 @@ const ActionSource = {
       body: JSON.stringify(data),
     };
 
-    const result = await fetch(
-      () => API_ENDPOINT.PERSON_PRESENCE(data.id),
-      options
-    );
+    const endpoint = API_ENDPOINT.PERSON_PRESENCE(data.id);
+    const result = await fetch(endpoint, options);
+    const resultJson = result.json();
 
-    return result;
+    console.log(resultJson);
+    return resultJson;
   },
 };
 

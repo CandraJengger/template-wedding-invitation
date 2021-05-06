@@ -2,12 +2,16 @@ class FormComp extends HTMLElement {
   connectedCallback() {
     this.idComp = this.getAttribute('idComp') || '';
     this.nameValue = this.getAttribute('nameValue') || '';
+    this.idValue = this.getAttribute('idValue') || '';
+    this.wishValue = this.getAttribute('wishValue') || '';
     this.render();
   }
 
   render() {
     this.innerHTML = `
       <form id="${this.idComp}">
+        <!-- ID -->
+        <input type="text" id="idInput" value="${this.idValue}" class="hidden"/>
         <!-- Input Nama -->
         <label class="block mb-4">
           <span class="text-gray-700 font-medium">Nama</span>
@@ -16,7 +20,7 @@ class FormComp extends HTMLElement {
         <!-- Input Doa & Harapan -->
         <label class="block mb-4">
           <span class="text-gray-700 font-medium">Doa & Harapan</span>
-          <textarea class="input-text" rows="8" id="wishInput"></textarea>
+          <textarea class="input-text" rows="8" id="wishInput">${this.wishValue}</textarea>
         </label>
 
         <!-- Input Kehadiran -->
