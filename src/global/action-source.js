@@ -12,6 +12,11 @@ const ActionSource = {
     return result.data;
   },
 
+  async getWishList() {
+    const result = await this._fetchAPI(API_ENDPOINT.WISH_LIST);
+    return result.data;
+  },
+
   async updatePresence(data) {
     const options = {
       method: 'PUT',

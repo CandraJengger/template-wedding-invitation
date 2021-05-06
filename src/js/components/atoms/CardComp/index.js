@@ -8,7 +8,7 @@ class CardComp extends HTMLElement {
   render() {
     this.innerHTML = `
       <div
-        class="w-2/3 md:w-full p-5 rounded-md shadow-lg bg-white mx-auto my-6"
+        class="p-5 rounded-md shadow-lg bg-white mx-auto my-6"
       >
         <h4 class="font-semibold text-green-full-dark">${this.title}</h4>
         <p class="text-sm text-gray-600">

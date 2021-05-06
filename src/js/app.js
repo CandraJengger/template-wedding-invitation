@@ -22,24 +22,25 @@ import ActionSource from '../global/action-source';
 
 // Get Name From URL
 const App = async () => {
+  const btnOpenInvitation = document.getElementById('btn-open-invitation');
   const nameSlugFromURL = getSlugFromURL();
   const nameFromURL = getNameFromURL();
 
   if (nameFromURL.length > 0) {
-    const result = await ActionSource.checkInvitation(nameSlugFromURL);
+    const dataPerson = await ActionSource.checkInvitation(nameSlugFromURL);
     const invContainer = document.querySelector('invite-comp');
 
-    if (result === undefined) {
+    if (dataPerson === undefined) {
       document.getElementById('body').innerHTML =
         '<no-invite-comp></no-invite-comp>';
       return;
     }
 
-    invContainer.namePerson = result.data.name;
+    invContainer.namePerson = dataPerson.data.name;
 
     InviteInitiator.init({
       invContainer: invContainer,
-      buttonInvComp: document.getElementById('btn-buka-undangan'),
+      buttonInvComp: document.getElementById('btn-open-invitation'),
       main: document.getElementById('main'),
       audio: document.querySelector('#backsound'),
     });
@@ -47,10 +48,10 @@ const App = async () => {
     document.getElementById('formContainer').innerHTML = `
       <form-comp 
         idComp="form" 
-        nameValue="${result.data.name}" 
-        idValue="${result.data.id_invitation}" 
-        wishValue="${result.data.wish}" 
-        radioChecked="${result.data.attending ? 'hadir' : 'tidak hadir'}"
+        nameValue="${dataPerson.data.name}" 
+        idValue="${dataPerson.data.id_invitation}" 
+        wishValue="${dataPerson.data.wish}" 
+        radioChecked="${dataPerson.data.attending ? 'hadir' : 'tidak hadir'}"
         class="w-full md:w-2/4 my-5 px-4">
       </form-comp>
     `;
@@ -67,6 +68,25 @@ const App = async () => {
     document.getElementById('body').innerHTML =
       '<no-invite-comp></no-invite-comp>';
     return;
+  }
+
+  // Wish List
+  const wishList = await ActionSource.getWishList();
+  if (wishList) {
+    document.querySelector('.swiper-wrapper').innerHTML = `
+    ${wishList.wishes.map(
+      (wish) => `
+      <div class="swiper-slide flex items-center">
+        <card-comp
+          title="${wish.name}"
+          content="${wish.wish}"
+          class="w-2/3 md:w-full"
+        >
+        </card-comp>
+      </div>
+      `
+    )}
+    `;
   }
 
   LayoutInitiator.init({
@@ -88,59 +108,61 @@ const App = async () => {
   let i = 0;
 
   AOS.init();
-  document.getElementById('btn-buka-undangan').addEventListener('click', () => {
-    AOS.refresh();
+  document
+    .getElementById('btn-open-invitation')
+    .addEventListener('click', () => {
+      AOS.refresh();
 
-    const wishes = new Swiper('.swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      centeredSlides: true,
-      loop: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        // when window width is >= 499px
-        473: {
-          slidesPerView: 2,
-          spaceBetweenSlides: 50,
+      const wishes = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
-        // when window width is >= 999px
-        999: {
-          slidesPerView: 3,
-          spaceBetweenSlides: 50,
+        breakpoints: {
+          // when window width is >= 499px
+          473: {
+            slidesPerView: 2,
+            spaceBetweenSlides: 50,
+          },
+          // when window width is >= 999px
+          999: {
+            slidesPerView: 3,
+            spaceBetweenSlides: 50,
+          },
         },
-      },
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-    });
-
-    const pageLazyLoad = new LazyLoad();
-
-    Promise.all([
-      import(
-        /* webpackChunkName: "lightgallery" */
-        'lightgallery.js'
-      ), // lightgallery.js must be first
-      import('lg-fullscreen.js'),
-      import('lg-zoom.js'),
-      import('lg-pager.js'),
-      // import('lg-hash.js')
-    ])
-      .then(([]) => {
-        lightGallery(document.getElementById('lightgallery'));
-      })
-      .catch((error) => {
-        console.log(error);
-        console.error(
-          'An error occurred while loading the lightgallery module',
-          'Module Load Failed'
-        );
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
       });
-  });
+
+      const pageLazyLoad = new LazyLoad();
+
+      Promise.all([
+        import(
+          /* webpackChunkName: "lightgallery" */
+          'lightgallery.js'
+        ), // lightgallery.js must be first
+        import('lg-fullscreen.js'),
+        import('lg-zoom.js'),
+        import('lg-pager.js'),
+        // import('lg-hash.js')
+      ])
+        .then(([]) => {
+          lightGallery(document.getElementById('lightgallery'));
+        })
+        .catch((error) => {
+          console.log(error);
+          console.error(
+            'An error occurred while loading the lightgallery module',
+            'Module Load Failed'
+          );
+        });
+    });
 };
 
 App();

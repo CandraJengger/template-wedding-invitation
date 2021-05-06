@@ -40,7 +40,7 @@ class InviteComp extends HTMLElement {
           ${this._namePerson ? this._namePerson : ''}
         </p>
         <button-comp
-          idComp="btn-buka-undangan"
+          idComp="btn-open-invitation"
           text="Buka Undangan"
         ></button-comp>
       </div>
