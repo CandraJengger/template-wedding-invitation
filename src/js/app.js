@@ -44,9 +44,16 @@ const App = async () => {
       audio: document.querySelector('#backsound'),
     });
 
-    document.getElementById(
-      'formContainer'
-    ).innerHTML = `<form-comp idComp="form" nameValue="${result.data.name}" idValue="${result.data.id_invitation}" wishValue="${result.data.wish}" class="w-full md:w-2/4 my-5 px-4"></form-comp>`;
+    document.getElementById('formContainer').innerHTML = `
+      <form-comp 
+        idComp="form" 
+        nameValue="${result.data.name}" 
+        idValue="${result.data.id_invitation}" 
+        wishValue="${result.data.wish}" 
+        radioChecked="${result.data.attending ? 'hadir' : 'tidak hadir'}"
+        class="w-full md:w-2/4 my-5 px-4">
+      </form-comp>
+    `;
 
     FormInitiator.init({
       form: document.getElementById('form'),
@@ -78,60 +85,62 @@ const App = async () => {
     date: new Date('May 22, 2021 08:00:00').getTime(),
   });
 
-  // AOS
+  let i = 0;
+
   AOS.init();
+  document.getElementById('btn-buka-undangan').addEventListener('click', () => {
+    AOS.refresh();
 
-  window.addEventListener('load', AOS.refresh);
-
-  const wishes = new Swiper('.swiper-container', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    centeredSlides: true,
-    loop: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      // when window width is >= 499px
-      473: {
-        slidesPerView: 2,
-        spaceBetweenSlides: 50,
+    const wishes = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      // when window width is >= 999px
-      999: {
-        slidesPerView: 3,
-        spaceBetweenSlides: 50,
+      breakpoints: {
+        // when window width is >= 499px
+        473: {
+          slidesPerView: 2,
+          spaceBetweenSlides: 50,
+        },
+        // when window width is >= 999px
+        999: {
+          slidesPerView: 3,
+          spaceBetweenSlides: 50,
+        },
       },
-    },
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-  });
-
-  const pageLazyLoad = new LazyLoad();
-
-  Promise.all([
-    import(
-      /* webpackChunkName: "lightgallery" */
-      'lightgallery.js'
-    ), // lightgallery.js must be first
-    import('lg-fullscreen.js'),
-    import('lg-zoom.js'),
-    import('lg-pager.js'),
-    // import('lg-hash.js')
-  ])
-    .then(([]) => {
-      lightGallery(document.getElementById('lightgallery'));
-    })
-    .catch((error) => {
-      console.log(error);
-      console.error(
-        'An error occurred while loading the lightgallery module',
-        'Module Load Failed'
-      );
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
     });
+
+    const pageLazyLoad = new LazyLoad();
+
+    Promise.all([
+      import(
+        /* webpackChunkName: "lightgallery" */
+        'lightgallery.js'
+      ), // lightgallery.js must be first
+      import('lg-fullscreen.js'),
+      import('lg-zoom.js'),
+      import('lg-pager.js'),
+      // import('lg-hash.js')
+    ])
+      .then(([]) => {
+        lightGallery(document.getElementById('lightgallery'));
+      })
+      .catch((error) => {
+        console.log(error);
+        console.error(
+          'An error occurred while loading the lightgallery module',
+          'Module Load Failed'
+        );
+      });
+  });
 };
 
 App();

@@ -4,6 +4,7 @@ class FormComp extends HTMLElement {
     this.nameValue = this.getAttribute('nameValue') || '';
     this.idValue = this.getAttribute('idValue') || '';
     this.wishValue = this.getAttribute('wishValue') || '';
+    this.radioChecked = this.getAttribute('radioChecked') || 'hadir';
     this.render();
   }
 
@@ -15,12 +16,16 @@ class FormComp extends HTMLElement {
         <!-- Input Nama -->
         <label class="block mb-4">
           <span class="text-gray-700 font-medium">Nama</span>
-          <input type="text" class="input-text" placeholder="" id="nameInput" value="${this.nameValue}" disabled/>
+          <input type="text" class="input-text" placeholder="" id="nameInput" value="${
+            this.nameValue
+          }" disabled/>
         </label>
         <!-- Input Doa & Harapan -->
         <label class="block mb-4">
           <span class="text-gray-700 font-medium">Doa & Harapan</span>
-          <textarea class="input-text" rows="8" id="wishInput">${this.wishValue}</textarea>
+          <textarea class="input-text" rows="8" id="wishInput" required>${
+            this.wishValue
+          }</textarea>
         </label>
 
         <!-- Input Kehadiran -->
@@ -28,7 +33,9 @@ class FormComp extends HTMLElement {
           <span class="text-gray-700 font-medium block mb-2"
             >Maukah kamu hadir ?</span
           >
-          <input type="radio" name="kehadiran" id="hadir" value="hadir" />
+          <input type="radio" name="kehadiran" id="hadir" value="hadir" ${
+            this.radioChecked === 'hadir' && 'checked'
+          }/>
           <label
             for="hadir"
             class="mr-4 cursor-pointer text-green-full-dark"
@@ -40,6 +47,7 @@ class FormComp extends HTMLElement {
             name="kehadiran"
             id="tidakHadir"
             value="tidak hadir"
+            ${this.radioChecked === 'tidak hadir' && 'checked'}
           />
           <label
             for="tidakHadir"

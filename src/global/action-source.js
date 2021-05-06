@@ -21,9 +21,8 @@ const ActionSource = {
 
     const endpoint = API_ENDPOINT.PERSON_PRESENCE(data.id);
     const result = await fetch(endpoint, options);
-    const resultJson = result.json();
+    const resultJson = await result.json();
 
-    console.log(resultJson);
     return resultJson;
   },
 };

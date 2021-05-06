@@ -19,6 +19,11 @@ const FormInitiator = {
       };
 
       const result = await ActionSource.updatePresence(data);
+
+      console.log(result);
+      if (result) {
+        this._form.innerHTML = '<p>Terimakasih sudah hadir</p>';
+      }
     });
   },
 
