@@ -22,7 +22,7 @@ const FormInitiator = {
 
       console.log(result);
       if (result) {
-        this._form.innerHTML = '<p>Terimakasih sudah hadir</p>';
+        this._form.innerHTML += '<p>Terimakasih sudah mengirimkan respon</p>';
       }
     });
   },

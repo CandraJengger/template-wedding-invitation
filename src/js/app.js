@@ -16,64 +16,69 @@ import ButtonsInitiator from './utils/buttons-link-initiator';
 import CountdownInitiator from './utils/countdown-initiator';
 import FormInitiator from './utils/form-initiator';
 import InviteInitiator from './utils/invite-initiator';
+import PreloaderIntitiator from './utils/preloader-inititator';
 
 import { getNameFromURL, getSlugFromURL } from './routes/url-parser';
 import ActionSource from '../global/action-source';
 
 // Get Name From URL
 const App = async () => {
-  const btnOpenInvitation = document.getElementById('btn-open-invitation');
   const nameSlugFromURL = getSlugFromURL();
   const nameFromURL = getNameFromURL();
 
-  if (nameFromURL.length > 0) {
-    const dataPerson = await ActionSource.checkInvitation(nameSlugFromURL);
-    const invContainer = document.querySelector('invite-comp');
+  try {
+    if (nameFromURL.length > 0) {
+      PreloaderIntitiator.showLoading(
+        document.querySelector('spinner-comp .spinner-wrapper')
+      );
 
-    if (dataPerson === undefined) {
+      const dataPerson = await ActionSource.checkInvitation(nameSlugFromURL);
+      const invContainer = document.querySelector('invite-comp');
+
+      if (dataPerson === undefined) {
+        document.getElementById('body').innerHTML =
+          '<no-invite-comp></no-invite-comp>';
+        return;
+      }
+
+      invContainer.namePerson = dataPerson.data.name;
+
+      InviteInitiator.init({
+        invContainer: invContainer,
+        buttonInvComp: document.getElementById('btn-open-invitation'),
+        main: document.getElementById('main'),
+        audio: document.querySelector('#backsound'),
+      });
+
+      document.getElementById('formContainer').innerHTML = `
+        <form-comp 
+          idComp="form" 
+          nameValue="${dataPerson.data.name}" 
+          idValue="${dataPerson.data.id_invitation}" 
+          wishValue="${dataPerson.data.wish}" 
+          radioChecked="${dataPerson.data.attending ? 'hadir' : 'tidak hadir'}"
+          class="w-full md:w-2/4 my-5 px-4">
+        </form-comp>
+      `;
+
+      FormInitiator.init({
+        form: document.getElementById('form'),
+        nameInput: document.getElementById('nameInput'),
+        wishInput: document.getElementById('wishInput'),
+        idInput: document.getElementById('idInput'),
+        button: document.getElementById('btn-kehadiran'),
+        radios: document.getElementsByName('kehadiran'),
+      });
+    } else {
       document.getElementById('body').innerHTML =
         '<no-invite-comp></no-invite-comp>';
       return;
     }
 
-    invContainer.namePerson = dataPerson.data.name;
-
-    InviteInitiator.init({
-      invContainer: invContainer,
-      buttonInvComp: document.getElementById('btn-open-invitation'),
-      main: document.getElementById('main'),
-      audio: document.querySelector('#backsound'),
-    });
-
-    document.getElementById('formContainer').innerHTML = `
-      <form-comp 
-        idComp="form" 
-        nameValue="${dataPerson.data.name}" 
-        idValue="${dataPerson.data.id_invitation}" 
-        wishValue="${dataPerson.data.wish}" 
-        radioChecked="${dataPerson.data.attending ? 'hadir' : 'tidak hadir'}"
-        class="w-full md:w-2/4 my-5 px-4">
-      </form-comp>
-    `;
-
-    FormInitiator.init({
-      form: document.getElementById('form'),
-      nameInput: document.getElementById('nameInput'),
-      wishInput: document.getElementById('wishInput'),
-      idInput: document.getElementById('idInput'),
-      button: document.getElementById('btn-kehadiran'),
-      radios: document.getElementsByName('kehadiran'),
-    });
-  } else {
-    document.getElementById('body').innerHTML =
-      '<no-invite-comp></no-invite-comp>';
-    return;
-  }
-
-  // Wish List
-  const wishList = await ActionSource.getWishList();
-  if (wishList) {
-    document.querySelector('.swiper-wrapper').innerHTML = `
+    // Wish List
+    const wishList = await ActionSource.getWishList();
+    if (wishList) {
+      document.querySelector('.swiper-wrapper').innerHTML = `
     ${wishList.wishes.map(
       (wish) => `
       <div class="swiper-slide flex items-center">
@@ -87,25 +92,34 @@ const App = async () => {
       `
     )}
     `;
+    }
+
+    LayoutInitiator.init({
+      mainContent: document.querySelector('main'),
+      fab: document.getElementById('button-music'),
+      audio: document.querySelector('#backsound'),
+    });
+
+    ButtonsInitiator.init({
+      btnLiveStream: document.getElementById('btn-live-stream'),
+      btnViewMap: document.getElementById('btn-view-map'),
+    });
+
+    CountdownInitiator.init({
+      countdownContainer: document.getElementById('countdown'),
+      date: new Date('May 22, 2021 08:00:00').getTime(),
+    });
+  } catch (err) {
+    console.log(err.message);
+    PreloaderIntitiator.showError({
+      errorMsg: 'Ups.. Something went wrong',
+      errorWrapper: document.querySelector('error-comp .error-wrapper'),
+    });
+  } finally {
+    PreloaderIntitiator.hideLoading(
+      document.querySelector('spinner-comp .spinner-wrapper')
+    );
   }
-
-  LayoutInitiator.init({
-    mainContent: document.querySelector('main'),
-    fab: document.getElementById('button-music'),
-    audio: document.querySelector('#backsound'),
-  });
-
-  ButtonsInitiator.init({
-    btnLiveStream: document.getElementById('btn-live-stream'),
-    btnViewMap: document.getElementById('btn-view-map'),
-  });
-
-  CountdownInitiator.init({
-    countdownContainer: document.getElementById('countdown'),
-    date: new Date('May 22, 2021 08:00:00').getTime(),
-  });
-
-  let i = 0;
 
   AOS.init();
   document

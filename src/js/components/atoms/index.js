@@ -5,3 +5,5 @@ import './CardComp';
 import './TextComp';
 import './ImageCaptionComp';
 import './CountdownComp';
+import './SpinnerComp';
+import './ErrorComp';

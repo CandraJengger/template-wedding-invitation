@@ -91,6 +91,32 @@
     @apply mt-2 block w-full py-2 px-5 bg-gray-100 rounded-md border border-transparent shadow-sm focus:border-gray-500 focus:bg-white;
   }
 
+  .spinner-wrapper {
+    @apply hidden fixed inset-0 bg-white;
+    z-index: 11111111111;
+  }
+
+  .spinner-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+  }
+
+  .error-wrapper {
+    @apply hidden fixed inset-0 bg-white;
+    z-index: 11111111111;
+  }
+
+  .error-wrapper .error-wrapper-content {
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   @media screen and (min-width: 1200px) and (min-height: 1000px) {
     .date-wrapper {
       max-width: 1080px;
