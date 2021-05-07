@@ -35,7 +35,7 @@ class InviteComp extends HTMLElement {
         <p class="text-xl md:text-2xl text-green-dark mb-6">
           WEDDING EVENT <br />INVITATION
         </p>
-        <p class="text-green-full-dark font-semibold">DEAR:</p>
+        <p class="text-green-full-dark font-semibold opacity-60">Kepada:</p>
         <p class="text-green-full-dark font-semibold text-lg" id="">
           ${this._namePerson ? this._namePerson : ''}
         </p>
