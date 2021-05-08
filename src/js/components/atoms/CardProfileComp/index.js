@@ -60,7 +60,7 @@ class CardProfileComp extends HTMLElement {
             <i class="fab fa-instagram text-2xl"></i>
           </button>
           <span
-            class="absolute h-full right-0 transition-all duration-200 opacity-0 group-hover:opacity-100 italic font-light mr-2 text-blue-400"
+            class="absolute h-full right-0 transition-all duration-200 opacity-0 group-hover:opacity-100 italic font-light mr-2 text-yellow-200"
             >${this.usernameIG}</span
           >
         </a>

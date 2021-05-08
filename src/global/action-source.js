@@ -17,6 +17,11 @@ const ActionSource = {
     return result.data;
   },
 
+  async getLinkYoutube() {
+    const result = await this._fetchAPI(API_ENDPOINT.LINK_YOUTUBE);
+    return result.data.url;
+  },
+
   async updatePresence(data) {
     const options = {
       method: 'PUT',
