@@ -81,7 +81,7 @@ const App = async () => {
       document.querySelector('.swiper-wrapper').innerHTML = `
     ${wishList.wishes.map(
       (wish) => `
-      <div class="swiper-slide flex items-center">
+      <div class="swiper-slide flex items-center justify-center">
         <card-comp
           title="${wish.name}"
           content="${wish.wish}"

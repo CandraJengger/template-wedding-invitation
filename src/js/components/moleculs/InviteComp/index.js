@@ -16,19 +16,10 @@ class InviteComp extends HTMLElement {
       id="${this.idComp}"
       class="fixed inset-0 bg-white z-50 flex justify-center items-center p-10"
     >
-      <img
-        src="../images/content/eastwood-14.png"
-        alt="Decoration"
-        class="absolute h-72 lg:h-96 -left-7 -bottom-40 md:left-0 md:-bottom-6"
-      />
-      <img
-        src="../images/content/eastwood-14.png"
-        alt="Decoration"
-        class="absolute h-72 lg:h-96 -top-40 -right-7 md:right-0 md:-top-6 transform rotate-180"
-      />
+      <img src="../images/content/bg-landing.webp" alt="Background landing" class="absolute inset-0 w-full h-full object-cover object-center" />
       <div class="text-center z-30 transform translate-y-0 md:translate-y-10">
         <h1
-          class="bad-script text-5xl md:text-8xl text-green-700 font-semibold my-10"
+          class="bad-script text-5xl md:text-8xl text-green-700 font-semibold my-8"
         >
           Dimas & Kiki
         </h1>

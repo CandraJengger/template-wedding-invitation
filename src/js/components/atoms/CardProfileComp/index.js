@@ -22,7 +22,7 @@ class CardProfileComp extends HTMLElement {
         <img
           data-src="${this.imgSrc}"
           alt="${this.altImg}"
-          class="lazy absolute w-full h-full inset-0 object-cover object-center"
+          class="lazy absolute w-full h-full inset-0 object-cover object-top"
           width="240"
           height="240"
         />
