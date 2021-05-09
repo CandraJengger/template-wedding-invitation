@@ -181,6 +181,10 @@ const App = async () => {
             'An error occurred while loading the lightgallery module',
             'Module Load Failed'
           );
+          document.querySelectorAll('.img-gallery-thumb').forEach((el) => {
+            el.classList.add('pointer-events-none');
+            el.classList.add('cursor-default');
+          });
         });
     });
 };

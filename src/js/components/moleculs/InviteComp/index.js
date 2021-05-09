@@ -16,12 +16,18 @@ class InviteComp extends HTMLElement {
       id="${this.idComp}"
       class="fixed inset-0 bg-white z-50 flex justify-center items-center p-10"
     >
-      <img src="../images/content/bg-landing.webp" alt="Background landing" class="absolute inset-0 w-full h-full object-cover object-center" />
-      <div class="text-center z-30 transform translate-y-0 md:translate-y-10">
+      
+      <picture>
+        <source media="(max-width: 500px)" srcset="../images/content/bg-landing-2.webp">
+        <source media="(min-width: 600px)" srcset="../images/content/bg-landing.webp">
+        <img src="../images/content/bg-landing.webp" alt="Background landing" class="absolute inset-0 w-full h-full object-cover object-center">
+      </picture>
+
+      <div class="text-center z-30 transform translate-y-6 md:translate-y-10">
         <h1
-          class="bad-script text-5xl md:text-8xl text-green-700 font-semibold my-8"
+          class="bad-script text-6xl md:text-8xl text-green-700 my-6"
         >
-          Dimas & Kiki
+          Kiki & Dimas
         </h1>
         <p class="text-xl md:text-2xl text-green-dark mb-6">
           WEDDING EVENT <br />INVITATION

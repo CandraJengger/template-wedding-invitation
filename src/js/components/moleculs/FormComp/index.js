@@ -23,7 +23,7 @@ class FormComp extends HTMLElement {
         <!-- Input Doa & Harapan -->
         <label class="block mb-4">
           <span class="text-gray-700 font-medium">Doa & Harapan</span>
-          <textarea class="input-text" rows="8" id="wishInput" placeholder="Tuliskan doa serta harapanmu untuk Dimas & Kiki..." required>${
+          <textarea class="input-text" rows="8" id="wishInput" placeholder="Tuliskan doa serta harapanmu untuk Kiki & Dimas..." required>${
             this.wishValue
           }</textarea>
         </label>
