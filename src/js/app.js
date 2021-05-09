@@ -56,7 +56,6 @@ const App = async () => {
           nameValue="${dataPerson.data.name}" 
           idValue="${dataPerson.data.id_invitation}" 
           wishValue="${dataPerson.data.wish}" 
-          radioChecked="${dataPerson.data.attending ? 'hadir' : 'tidak hadir'}"
           class="w-full md:w-2/4 my-5 px-4">
         </form-comp>
       `;
@@ -68,6 +67,7 @@ const App = async () => {
         idInput: document.getElementById('idInput'),
         button: document.getElementById('btn-kehadiran'),
         radios: document.getElementsByName('kehadiran'),
+        response: document.getElementById('response'),
       });
     } else {
       document.getElementById('body').innerHTML =

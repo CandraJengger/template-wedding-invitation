@@ -4,7 +4,6 @@ class FormComp extends HTMLElement {
     this.nameValue = this.getAttribute('nameValue') || '';
     this.idValue = this.getAttribute('idValue') || '';
     this.wishValue = this.getAttribute('wishValue') || '';
-    this.radioChecked = this.getAttribute('radioChecked') || 'hadir';
     this.render();
   }
 
@@ -46,8 +45,7 @@ class FormComp extends HTMLElement {
             type="radio"
             name="kehadiran"
             id="tidakHadir"
-            value="tidak hadir"
-            ${this.radioChecked === 'tidak hadir' && 'checked'} class="mb-4"
+            value="tidak hadir" class="mb-4"
           />
           <label
             for="tidakHadir"
@@ -62,6 +60,9 @@ class FormComp extends HTMLElement {
           className="w-full"
         >
         </button-comp>
+        <div class="respon h-56 flex justify-center items-center text-green-700 text-4xl text-center ">
+          <p id="response" class="bad-script w-44 opacity-0 transition-all duration-200">Terimakasih telah memberikan respon ^_^</p>
+        </div>
       </form>
     `;
   }

@@ -1,12 +1,13 @@
 import ActionSource from '../../global/action-source';
 
 const FormInitiator = {
-  init({ form, nameInput, wishInput, idInput, button, radios }) {
+  init({ form, nameInput, wishInput, idInput, button, radios, response }) {
     this._form = form;
     this._nameInput = nameInput;
     this._wishInput = wishInput;
     this._idValue = idInput;
     this._button = button;
+    this._response = response;
 
     this._form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -22,7 +23,7 @@ const FormInitiator = {
 
       console.log(result);
       if (result) {
-        this._form.innerHTML += '<p>Terimakasih sudah mengirimkan respon</p>';
+        this._response.classList.replace('opacity-0', 'opacity-100');
       }
     });
   },
