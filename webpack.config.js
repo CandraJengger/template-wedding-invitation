@@ -108,6 +108,14 @@ module.exports = {
           },
         },
         {
+          from: path.resolve(env.paths.source, 'images', 'icons'),
+          to: path.resolve(env.paths.output, 'images', 'icons'),
+          toType: 'dir',
+          globOptions: {
+            ignore: ['*.DS_Store', 'Thumbs.db'],
+          },
+        },
+        {
           from: path.resolve(env.paths.source, 'css'),
           to: path.resolve(env.paths.output, 'css'),
           toType: 'dir',
