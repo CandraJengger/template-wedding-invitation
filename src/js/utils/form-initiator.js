@@ -21,7 +21,6 @@ const FormInitiator = {
 
       const result = await ActionSource.updatePresence(data);
 
-      console.log(result);
       if (result) {
         this._response.classList.replace('opacity-0', 'opacity-100');
       }
