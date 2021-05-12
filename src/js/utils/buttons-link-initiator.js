@@ -5,9 +5,7 @@ const ButtonsInitiator = {
     });
 
     btnLiveStream.addEventListener('click', () => {
-      this._linkTo(
-        linkYoutube.length > 0 ? linkYoutube : 'https://www.youtube.com/'
-      );
+      this._linkTo(linkYoutube.length > 0 ? linkYoutube : '#');
     });
   },
 

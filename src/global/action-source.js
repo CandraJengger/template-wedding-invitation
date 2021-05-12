@@ -19,7 +19,12 @@ const ActionSource = {
 
   async getLinkYoutube() {
     const result = await this._fetchAPI(API_ENDPOINT.LINK_YOUTUBE);
-    return result.data.url;
+
+    if (result.data.url) {
+      return result.data.url;
+    }
+
+    return '';
   },
 
   async updatePresence(data) {
