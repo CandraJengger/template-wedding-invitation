@@ -24,7 +24,9 @@ const ActionSource = {
       return result.data.url;
     }
 
-    return '';
+    return {
+      url: '',
+    };
   },
 
   async updatePresence(data) {
