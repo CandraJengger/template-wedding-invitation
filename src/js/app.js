@@ -116,7 +116,7 @@ const App = async () => {
       date: new Date('May 22, 2021 08:00:00').getTime(),
     });
   } catch (err) {
-    console.log(err.message);
+    console.log(er);
     PreloaderIntitiator.showError({
       errorMsg: 'Ups.. Something went wrong',
       errorWrapper: document.querySelector('error-comp .error-wrapper'),
