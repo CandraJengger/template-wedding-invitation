@@ -24,6 +24,7 @@ const ActionSource = {
       return result.data.url;
     }
 
+    console.log(result);
     return {
       url: '',
     };
