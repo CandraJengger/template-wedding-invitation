@@ -103,6 +103,7 @@ const App = async () => {
         linkMap:
           "https://www.google.com/maps/place/3%C2%B042'17.4%22N+98%C2%B040'48.9%22E/@3.7048352,98.6780557,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d3.7048352!4d98.6802444?hl=en",
         linkYoutube: linkYoutube.url,
+        slug: nameSlugFromURL,
       });
     }
     LayoutInitiator.init({
@@ -116,7 +117,7 @@ const App = async () => {
       date: new Date('May 22, 2021 08:00:00').getTime(),
     });
   } catch (err) {
-    console.log(er);
+    console.log(err);
     PreloaderIntitiator.showError({
       errorMsg: 'Ups.. Something went wrong',
       errorWrapper: document.querySelector('error-comp .error-wrapper'),

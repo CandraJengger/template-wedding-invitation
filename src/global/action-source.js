@@ -20,11 +20,10 @@ const ActionSource = {
   async getLinkYoutube() {
     const result = await this._fetchAPI(API_ENDPOINT.LINK_YOUTUBE);
 
-    if (result.data.url) {
+    if (result.data) {
       return result.data.url;
     }
 
-    console.log(result);
     return {
       url: '',
     };
