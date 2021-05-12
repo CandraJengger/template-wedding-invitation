@@ -14,7 +14,7 @@ class InviteComp extends HTMLElement {
     this.innerHTML = `
     <div
       id="${this.idComp}"
-      class="fixed inset-0 bg-white z-50 flex justify-center items-center p-10"
+      class="fixed h-screen inset-0 bg-white z-50 flex justify-center items-center p-10"
     >
       
       <picture>

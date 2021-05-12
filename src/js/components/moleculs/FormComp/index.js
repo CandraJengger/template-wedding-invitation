@@ -57,7 +57,7 @@ class FormComp extends HTMLElement {
           idComp="btn-kehadiran"
           type="submit"
           text="Kirim"
-          className="w-full"
+          className="w-full my-0"
         >
         </button-comp>
         <div class="respon h-56 flex justify-center items-center text-green-700 text-4xl text-center ">
