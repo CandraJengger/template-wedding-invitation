@@ -12,7 +12,8 @@ import LazyLoad from 'vanilla-lazyload';
 import './components';
 
 import LayoutInitiator from './utils/layout-initiator';
-import ButtonsInitiator from './utils/buttons-link-initiator';
+import ButtonYTInitiator from './utils/button-live-yt-initiator';
+import ButtonMapInitiator from './utils/button-map-initiator';
 import CountdownInitiator from './utils/countdown-initiator';
 import FormInitiator from './utils/form-initiator';
 import InviteInitiator from './utils/invite-initiator';
@@ -96,22 +97,39 @@ const App = async () => {
 
     // link youtube
     const linkYoutube = await ActionSource.getLinkYoutube();
-    if (linkYoutube) {
-      ButtonsInitiator.init({
+    if (linkYoutube.url.length > 0) {
+      document.getElementById('btnSubmitContainer').innerHTML = `
+          <button-comp
+            idComp="btn-live-stream"
+            text="Live Streaming"
+            data-aos="zoom-out"
+            data-aos-delay="150"
+            data-aos-duration="550"
+          ></button-comp>
+      `;
+      ButtonYTInitiator.init({
         btnLiveStream: document.getElementById('btn-live-stream'),
-        btnViewMap: document.getElementById('btn-view-map'),
-        linkMap:
-          "https://www.google.com/maps/place/3%C2%B042'17.4%22N+98%C2%B040'48.9%22E/@3.7048352,98.6780557,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d3.7048352!4d98.6802444?hl=en",
         linkYoutube: linkYoutube.url,
         slug: nameSlugFromURL,
       });
     }
+
+    // Link Map
+    ButtonMapInitiator.init({
+      btnViewMap: document.getElementById('btn-view-map'),
+      linkMap:
+        "https://www.google.com/maps/place/3%C2%B042'17.4%22N+98%C2%B040'48.9%22E/@3.7048352,98.6780557,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x0!8m2!3d3.7048352!4d98.6802444?hl=en",
+      slug: nameSlugFromURL,
+    });
+
+    // Layout
     LayoutInitiator.init({
       mainContent: document.querySelector('main'),
       fab: document.getElementById('button-music'),
       audio: document.querySelector('#backsound'),
     });
 
+    // Countdown
     CountdownInitiator.init({
       countdownContainer: document.getElementById('countdown'),
       date: new Date('May 22, 2021 08:00:00').getTime(),
