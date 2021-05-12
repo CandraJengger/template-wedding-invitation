@@ -53,6 +53,7 @@ class FormComp extends HTMLElement {
             >Maaf, belum bisa hadir</label
           >
         </label>
+        <div class="w-full h-7 gap"></div>
         <button-comp
           idComp="btn-kehadiran"
           type="submit"
